@@ -1,0 +1,9 @@
+Document: python-stestr-doc
+Title: stestr Documentation
+Author: N/A
+Abstract: Sphinx documentation for stestr
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-stestr-doc/html/index.html
+Files: /usr/share/doc/python-stestr-doc/html/*

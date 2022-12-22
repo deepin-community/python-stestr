@@ -1,0 +1,80 @@
+Source: python-stestr
+Section: python
+Priority: optional
+Maintainer: Debian OpenStack <team+openstack@tracker.debian.org>
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+Build-Depends:
+ debhelper-compat (= 10),
+ dh-python,
+ openstack-pkg-tools,
+ python3-all,
+ python3-pbr,
+ python3-setuptools,
+ python3-sphinx,
+Build-Depends-Indep:
+ python3-cliff,
+ python3-coverage <!nocheck>,
+ python3-ddt <!nocheck>,
+ python3-fixtures <!nocheck>,
+ python3-future <!nocheck>,
+ python3-testtools <!nocheck>,
+ python3-voluptuous <!nocheck>,
+ python3-yaml <!nocheck>,
+ subunit (>= 1.4.0) <!nocheck>,
+Standards-Version: 4.4.1
+Vcs-Browser: https://salsa.debian.org/openstack-team/libs/python-stestr
+Vcs-Git: https://salsa.debian.org/openstack-team/libs/python-stestr.git
+Homepage: https://github.com/mtreinish/stestr
+
+Package: python-stestr-doc
+Section: doc
+Architecture: all
+Build-Profiles: <!nodoc>
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
+Description: test runner similar to testrepository - doc
+ Stestr stands for Slim/Super Test Repository. It is a fork of the
+ testrepository that concentrates on being a dedicated test runner for Python
+ projects. The generic abstraction layers which enabled testr to work with any
+ subunit emitting runner are gone. Stestr hard codes python-subunit-isms into
+ how it works. The code base is also designed to try and be explicit, and to
+ provide a Python API that is documented and has examples.
+ .
+ While stestr was originally forked from testrepository it is not 100%
+ backwards compatible with testrepository. At a high level the basic concepts
+ of operation are shared between the 2 projects but the actual usage between
+ the 2 is not exactly the same.
+ .
+ This package contains the documentation.
+
+Package: python3-stestr
+Architecture: all
+Depends:
+ python3-cliff,
+ python3-fixtures,
+ python3-future,
+ python3-pbr,
+ python3-testtools,
+ python3-voluptuous,
+ python3-yaml,
+ subunit (>= 1.4.0),
+ ${misc:Depends},
+ ${python3:Depends},
+Suggests:
+ python-stestr-doc,
+Description: test runner similar to testrepository - Python 3.x
+ Stestr stands for Slim/Super Test Repository. It is a fork of the
+ testrepository that concentrates on being a dedicated test runner for Python
+ projects. The generic abstraction layers which enabled testr to work with any
+ subunit emitting runner are gone. Stestr hard codes python-subunit-isms into
+ how it works. The code base is also designed to try and be explicit, and to
+ provide a Python API that is documented and has examples.
+ .
+ While stestr was originally forked from testrepository it is not 100%
+ backwards compatible with testrepository. At a high level the basic concepts
+ of operation are shared between the 2 projects but the actual usage between
+ the 2 is not exactly the same.
+ .
+ This package contains the Python 3.x module.

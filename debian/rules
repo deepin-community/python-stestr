@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT := https://github.com/mtreinish/stestr.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils --with python3,sphinxdoc
+
+# We need this to have the stestr binary when running tests
+export PATH:=$(PATH):$(CURDIR)/debian/tmp/usr/bin
+
+override_dh_auto_clean:
+	rm -rf build
+
+override_dh_auto_build:
+	echo "Do nothing..."
+
+override_dh_auto_install:
+	for i in $(PYTHON3S) ; do \
+		python3 setup.py install -f --install-layout=deb --root=$(CURDIR)/debian/tmp ; \
+	done
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+	set -x ; set -e ; for i in $(PYTHON3S); do \
+		PYTHONPATH=$(CURDIR)/debian/tmp/usr/lib/python3/dist-packages PYTHON=python$$i stestr init ; \
+		HOME=$(CURDIR) PYTHONPATH=$(CURDIR)/debian/tmp/usr/lib/python3/dist-packages PYTHON=python$$i stestr run --subunit 'stestr\.tests\.(?!(.*repository\.test_file\.TestFileRepository\.test_get_test_run_unexpected_ioerror_errno.*))' | subunit2pyunit ; \
+	done
+endif
+
+override_dh_auto_test:
+	echo "Do nothing..."
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	python3 -m sphinx -b html doc/source debian/python-stestr-doc/usr/share/doc/python-stestr-doc/html
+	dh_sphinxdoc
+endif
+
+override_dh_python3:
+	dh_python3 --shebang=/usr/bin/python3

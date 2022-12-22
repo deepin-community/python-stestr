@@ -1,0 +1,134 @@
+python-stestr (3.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Removed subunit2sql build-depends.
+  * Rebased remove-privacy-breach-in-README.rst.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 11 Nov 2021 10:00:38 +0100
+
+python-stestr (3.1.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 16 Aug 2021 09:37:33 +0200
+
+python-stestr (3.1.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 08 Mar 2021 11:29:10 +0100
+
+python-stestr (3.0.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+  * Fixed watch file.
+  * Add a debian/salsa-ci.yml.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 14 Oct 2020 14:01:45 +0200
+
+python-stestr (3.0.1-1) experimental; urgency=medium
+
+  * Add some <!nocheck> in d/control to avoid some package a build time if not
+    running unit tests.
+  * Add Build-Profiles: <!nodoc> for the -doc package.
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Rebased remove-privacy-breach-in-README.rst.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 08 Sep 2020 08:47:04 +0200
+
+python-stestr (2.4.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Thomas Goirand ]
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 21 Oct 2019 10:23:39 +0200
+
+python-stestr (2.4.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * Running wrap-and-sort -bast.
+  * Use debhelper-compat instead of debian/compat.
+  * Use 'python3 -m sphinx' instead of sphinx-build for building docs.
+  * Bump Standards-Version to 4.4.0.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Rebased remove-privacy-breach-in-README.rst.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 18 Sep 2019 22:12:54 +0200
+
+python-stestr (2.3.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 17 Jul 2019 00:29:41 +0200
+
+python-stestr (2.3.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Removed Python 2 support.
+  * Rebased remove-privacy-breach-in-README.rst.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 26 Mar 2019 21:24:27 +0100
+
+python-stestr (2.1.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Running wrap-and-sort -bast
+
+  [ Thomas Goirand ]
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 03 Sep 2018 22:57:24 +0200
+
+python-stestr (2.1.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Rebased remove-privacy-breach-in-README.rst.patch.
+  * Disabled argparse-empty-array.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 18 Aug 2018 21:48:35 +0200
+
+python-stestr (1.1.0-2) unstable; urgency=medium
+
+  * Apply patch from Ubuntu (Closes: #898656):
+    - d/p/argparse-empty-array.patch: Deal with [] instead of 'None'
+    when list is called with no additional parameters.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 15 May 2018 10:37:29 +0200
+
+python-stestr (1.1.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https in Format
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Standards-Version is now 4.1.3.
+  * Fixed running unit tests, and blacklist test that will never work under
+    the sbuild env: test_get_test_run_unexpected_ioerror_errno().
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 03 Mar 2018 19:24:52 +0100
+
+python-stestr (1.0.0-2) unstable; urgency=medium
+
+  * Fixed python3 shebang to be python3, not python3.x.
+  * Add missing openstack-pkg-tools build-depends.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 05 Nov 2017 23:14:46 +0000
+
+python-stestr (1.0.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #876406)
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 21 Sep 2017 21:29:08 +0200

@@ -14,11 +14,13 @@ Build-Depends:
  python3-sphinx,
 Build-Depends-Indep:
  python3-cliff,
+ python3-iso8601,
+ python3-extras <!nocheck>,,
  python3-coverage <!nocheck>,
  python3-ddt <!nocheck>,
  python3-fixtures <!nocheck>,
- python3-future <!nocheck>,
  python3-testtools <!nocheck>,
+ python3-tomlkit <!nocheck>,,
  python3-voluptuous <!nocheck>,
  python3-yaml <!nocheck>,
  subunit (>= 1.4.0) <!nocheck>,
@@ -53,10 +55,11 @@ Package: python3-stestr
 Architecture: all
 Depends:
  python3-cliff,
+ python3-extras,
  python3-fixtures,
- python3-future,
  python3-pbr,
  python3-testtools,
+ python3-tomlkit,
  python3-voluptuous,
  python3-yaml,
  subunit (>= 1.4.0),

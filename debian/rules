@@ -10,7 +10,9 @@ include /usr/share/openstack-pkg-tools/pkgos.make
 export PATH:=$(PATH):$(CURDIR)/debian/tmp/usr/bin
 
 override_dh_auto_clean:
-	rm -rf build
+	rm -rf build .stestr *.egg-info .cache
+	find . -iname '*.pyc' -delete
+	for i in $$(find . -type d -iname __pycache__) ; do rm -rf $$i ; done
 
 override_dh_auto_build:
 	echo "Do nothing..."

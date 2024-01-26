@@ -1,3 +1,29 @@
+python-stestr (4.1.0-1) unstable; urgency=medium
+
+  * New upstream relesae.
+  * Fixed (build-)depends for this release.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 17 Dec 2023 16:26:26 +0100
+
+python-stestr (4.0.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 04 Oct 2023 22:38:57 +0200
+
+python-stestr (4.0.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Rebased remove-privacy-breach-in-README.rst.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 29 Aug 2023 13:44:27 +0200
+
+python-stestr (3.2.1-2) unstable; urgency=medium
+
+  * Cleans better (Closes: #1047756).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 21 Aug 2023 14:31:27 +0200
+
 python-stestr (3.2.1-1) unstable; urgency=medium
 
   * New upstream release.

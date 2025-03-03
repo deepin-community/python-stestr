@@ -1,3 +1,15 @@
+python-stestr (4.1.0-3) unstable; urgency=medium
+
+  * Switch to pybuild (Closes: #1090619).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 18 Dec 2024 22:34:43 +0100
+
+python-stestr (4.1.0-2) unstable; urgency=medium
+
+  * Add bash completion.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 19 Mar 2024 09:33:59 +0100
+
 python-stestr (4.1.0-1) unstable; urgency=medium
 
   * New upstream relesae.
